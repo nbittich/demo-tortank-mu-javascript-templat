@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  demo:
+    image: "semtech/mu-javascript-template:feature-node-18"
+    volumes:
+      - ./examples:/share/input
+      - ./out:/share/output
+      - ./:/app
+    environment:
+      NODE_ENV: "development"
