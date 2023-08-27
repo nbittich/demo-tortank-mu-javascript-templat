@@ -59,6 +59,7 @@ console.log(tortank.statements(params));
 
 
 // ################ MERGE EXAMPLES #####################
+// *
 // * example merging a whole directory of turtle files in one single turtle 
 // * triples are dedup
 // *
@@ -93,7 +94,28 @@ for (const filePath of readdirSync(mergeDirPath)) {
 
 // ################ Difference EXAMPLES #####################
 // * 
-// * todo
+// * difference between two models
 // *
 // #####################################################
 
+params.lhsPath = join(INPUT_DIRECTORY, "diff", "modelA.ttl");
+params.rhsPath = join(INPUT_DIRECTORY, "diff", "modelB.ttl");
+params.lhsData = undefined;
+params.rhsData = undefined;
+params.outputFilePath = undefined;
+params.outputType = "js";
+console.log("diff between a and b: ", tortank.difference(params));
+
+// ################ Intersection EXAMPLES #####################
+// * 
+// * similarities between two models
+// *
+// #####################################################
+
+params.lhsPath = join(INPUT_DIRECTORY, "diff", "modelA.ttl");
+params.rhsPath = join(INPUT_DIRECTORY, "diff", "modelB.ttl");
+params.lhsData = undefined;
+params.rhsData = undefined;
+params.outputFilePath = undefined;
+params.outputType = "js";
+console.log("similarities between a and b: ", tortank.intersection(params));
