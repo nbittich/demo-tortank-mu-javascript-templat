@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "rdf-tortank-linux-musl": "^0.1.6"
+    "rdf-tortank-linux-musl": "^0.2.0"
   }
 }

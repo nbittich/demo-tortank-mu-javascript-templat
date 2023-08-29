@@ -118,4 +118,20 @@ params.lhsData = undefined;
 params.rhsData = undefined;
 params.outputFilePath = undefined;
 params.outputType = "js";
-console.log("similarities between a and b: ", tortank.intersection(params));
+
+const intersection = tortank.intersection(params);
+console.log("similarities between a and b: ", intersection);
+
+
+// we can also use an array of json as a model
+
+const paramsForStmts = {
+  lhsData: intersection,
+  outputType: "n3",
+  subject: "<mailto:person@example.net>",
+  predicate: "<http://xmlns.com/foaf/0.1/interest>"
+};
+
+const statements = tortank.statements(paramsForStmts);
+
+console.log(statements);
